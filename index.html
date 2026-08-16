@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hindi Sadabahar Geet</title>
+
+<style>
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #100606;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    height: 75px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(15, 5, 5, 0.8);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e51c3b;
+}
+
+.navbar a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #e51c3b;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 120px 9% 80px;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(180, 10, 40, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #100606,
+            #2b090f,
+            #100606
+        );
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.small-title {
+    color: #e51c3b;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(50px, 7vw, 95px);
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #e51c3b;
+}
+
+.hero p {
+    color: #bbaaaa;
+    line-height: 1.8;
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+.listen-btn {
+    border: none;
+
+    background: #e51c3b;
+    color: white;
+
+    padding: 15px 28px;
+
+    border-radius: 40px;
+
+    font-weight: bold;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 35px rgba(229,28,59,0.35);
+
+    transition: 0.3s;
+}
+
+.listen-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 45px rgba(229,28,59,0.5);
+}
+
+
+/* =========================
+   VINYL
+========================= */
+
+.vinyl-container {
+    width: 430px;
+    height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinyl {
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #050505 0px,
+            #181818 2px,
+            #050505 4px
+        );
+
+    box-shadow:
+        0 0 80px rgba(229,28,59,0.3);
+
+    position: relative;
+
+    animation: rotateVinyl 10s linear infinite;
+}
+
+.vinyl.paused {
+    animation-play-state: paused;
+}
+
+.vinyl::before {
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            #e51c3b 0 30%,
+            #761321 31% 60%,
+            #120606 61%
+        );
+}
+
+.vinyl::after {
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #050505;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotateVinyl {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   SONG SECTION
+========================= */
+
+.song-section {
+    padding: 100px 8%;
+
+    background: #0b0404;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.section-title small {
+    color: #e51c3b;
+
+    letter-spacing: 4px;
+    font-size: 11px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+
+    font-size: 55px;
+
+    margin-top: 10px;
+}
+
+.section-title h2 span {
+    color: #e51c3b;
+}
+
+
+/* =========================
+   SONG CARD
+========================= */
+
+.song-card {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(229,28,59,0.15),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid rgba(229,28,59,0.35);
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #e51c3b;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.4);
+}
+
+.song-number {
+    font-size: 20px;
+    color: #777;
+}
+
+.song-icon {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e51c3b,
+            #580916
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-info h3 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.song-info p {
+    color: #999;
+    font-size: 13px;
+}
+
+.play-small {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #e51c3b;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.play-small:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 100px 10%;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(229,28,59,0.15),
+            transparent 60%
+        );
+}
+
+.about h2 {
+    font-family: Georgia, serif;
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+.about h2 span {
+    color: #e51c3b;
+}
+
+.about p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #999;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   PLAYER
+========================= */
+
+.player {
+    position: fixed;
+
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+
+    z-index: 200;
+
+    min-height: 90px;
+
+    padding: 15px 25px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 200px 2fr;
+
+    align-items: center;
+
+    gap: 25px;
+
+    background:
+        rgba(28, 7, 10, 0.94);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(229,28,59,0.3);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 60px rgba(0,0,0,0.6);
+}
+
+
+/* player info */
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.player-art {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #e51c3b,
+        #510813
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.player-info h4 {
+    font-size: 14px;
+}
+
+.player-info p {
+    color: #888;
+    font-size: 11px;
+
+    margin-top: 5px;
+}
+
+
+/* controls */
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.control {
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.main-play {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #e51c3b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* progress */
+
+.progress-area {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+.progress-container {
+    flex: 1;
+
+    height: 5px;
+
+    border-radius: 20px;
+
+    background: #382024;
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+
+    background: #e51c3b;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 60px 20px 130px;
+
+    text-align: center;
+
+    background: #070202;
+
+    color: #777;
+}
+
+footer h3 {
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .vinyl-container {
+        margin-top: 60px;
+    }
+
+    .player {
+        grid-template-columns: 1fr auto;
+    }
+
+    .progress-area {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .vinyl-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .vinyl {
+        width: 270px;
+        height: 270px;
+    }
+
+    .section-title h2 {
+        font-size: 40px;
+    }
+
+    .song-card {
+        padding: 15px;
+    }
+
+    .song-number {
+        display: none;
+    }
+
+    .player {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+
+        padding: 10px;
+
+        grid-template-columns: 1fr auto;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        ♫ <span>Suro Ki Yaadein</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#song">Song</a>
+        <a href="#about">About</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            HINDI SADABAHAR GEET
+        </div>
+
+        <h1>
+            पुराने गीतों की
+            <span>यादें</span>
+        </h1>
+
+        <p>
+            कुछ धुनें कभी पुरानी नहीं होतीं।
+            सुनिए सदाबहार हिंदी गीत और खो जाइए
+            पुरानी खूबसूरत यादों में।
+        </p>
+
+        <button
+            class="listen-btn"
+            id="listenBtn"
+        >
+            ▶ सुनना शुरू करें
+        </button>
+
+    </div>
+
+
+    <div class="vinyl-container">
+
+        <div
+            class="vinyl"
+            id="vinyl"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SONG ================= -->
+
+<section
+    class="song-section"
+    id="song"
+>
+
+    <div class="section-title">
+
+        <small>
+            NOW PLAYING
+        </small>
+
+        <h2>
+            सदाबहार <span>गीत</span>
+        </h2>
+
+    </div>
+
+
+    <div class="song-card">
+
+        <div class="song-number">
+            01
+        </div>
+
+        <div class="song-icon">
+            ♫
+        </div>
+
+        <div class="song-info">
+
+            <h3>
+                Hindi Sadabahar Geet
+            </h3>
+
+            <p>
+                Old Is Gold Songs • Audio Jukebox
+            </p>
+
+        </div>
+
+        <button
+            class="play-small"
+            id="smallPlay"
+        >
+            ▶
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    class="about"
+    id="about"
+>
+
+    <h2>
+        कुछ गीत <span>सिर्फ सुने</span> नहीं जाते
+    </h2>
+
+    <p>
+        Suro Ki Yaadein पुराने हिंदी संगीत की
+        खूबसूरत यादों को समर्पित एक छोटा सा
+        musical experience है।
+    </p>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        ♫ Suro Ki Yaadein
+    </h3>
+
+    <p>
+        कुछ धुनें कभी पुरानी नहीं होतीं।
+    </p>
+
+</footer>
+
+
+<!-- ================= MUSIC PLAYER ================= -->
+
+<div class="player">
+
+    <div class="player-info">
+
+        <div class="player-art">
+            ♫
+        </div>
+
+        <div>
+
+            <h4 id="playerTitle">
+                Hindi Sadabahar Geet
+            </h4>
+
+            <p>
+                Old Is Gold Songs
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="controls">
+
+        <button
+            class="control"
+            id="restartBtn"
+        >
+            ↶
+        </button>
+
+        <button
+            class="control main-play"
+            id="playBtn"
+        >
+            ▶
+        </button>
+
+        <button
+            class="control"
+            id="muteBtn"
+        >
+            🔊
+        </button>
+
+    </div>
+
+
+    <div class="progress-area">
+
+        <span id="current">
+            00:00
+        </span>
+
+        <div
+            class="progress-container"
+            id="progressContainer"
+        >
+
+            <div
+                class="progress"
+                id="progress"
+            ></div>
+
+        </div>
+
+        <span id="duration">
+            00:00
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- ================= AUDIO ================= -->
+
+<audio
+    id="audio"
+    src="Hindi_Sadabahar_Geet___Old_Is_Gold_Songs___Audio_Jukebox___Alka_Yagnik,_Udit_Narayan,_Kumar_Sanu(128k).m4a"
+>
+</audio>
+
+
+<script>
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const audio =
+    document.getElementById("audio");
+
+const playBtn =
+    document.getElementById("playBtn");
+
+const smallPlay =
+    document.getElementById("smallPlay");
+
+const listenBtn =
+    document.getElementById("listenBtn");
+
+const restartBtn =
+    document.getElementById("restartBtn");
+
+const muteBtn =
+    document.getElementById("muteBtn");
+
+const vinyl =
+    document.getElementById("vinyl");
+
+const progress =
+    document.getElementById("progress");
+
+const progressContainer =
+    document.getElementById("progressContainer");
+
+const current =
+    document.getElementById("current");
+
+const duration =
+    document.getElementById("duration");
+
+
+/* =========================
+   FORMAT TIME
+========================= */
+
+function formatTime(seconds) {
+
+    if (isNaN(seconds)) {
+        return "00:00";
+    }
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const secondsPart =
+        Math.floor(seconds % 60);
+
+    return (
+        String(minutes).padStart(2, "0")
+        + ":" +
+        String(secondsPart).padStart(2, "0")
+    );
+}
+
+
+/* =========================
+   PLAY
+========================= */
+
+function playMusic() {
+
+    audio.play();
+
+    playBtn.innerHTML = "❚❚";
+
+    smallPlay.innerHTML = "❚❚";
+
+    vinyl.classList.remove("paused");
+}
+
+
+/* =========================
+   PAUSE
+========================= */
+
+function pauseMusic() {
+
+    audio.pause();
+
+    playBtn.innerHTML = "▶";
+
+    smallPlay.innerHTML = "▶";
+
+    vinyl.classList.add("paused");
+}
+
+
+/* =========================
+   PLAY / PAUSE
+========================= */
+
+playBtn.addEventListener(
+    "click",
+    () => {
+
+        if (audio.paused) {
+
+            playMusic();
+
+        } else {
+
+            pauseMusic();
+
+        }
+
+    }
+);
+
+
+smallPlay.addEventListener(
+    "click",
+    () => {
+
+        if (audio.paused) {
+
+            playMusic();
+
+        } else {
+
+            pauseMusic();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   HERO BUTTON
+========================= */
+
+listenBtn.addEventListener(
+    "click",
+    () => {
+
+        document
+            .getElementById("song")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+        playMusic();
+
+    }
+);
+
+
+/* =========================
+   PROGRESS UPDATE
+========================= */
+
+audio.addEventListener(
+    "timeupdate",
+    () => {
+
+        if (!audio.duration) {
+            return;
+        }
+
+        const percentage =
+            (audio.currentTime /
+            audio.duration) * 100;
+
+        progress.style.width =
+            percentage + "%";
+
+        current.textContent =
+            formatTime(
+                audio.currentTime
+            );
+
+    }
+);
+
+
+/* =========================
+   DURATION
+========================= */
+
+audio.addEventListener(
+    "loadedmetadata",
+    () => {
+
+        duration.textContent =
+            formatTime(
+                audio.duration
+            );
+
+    }
+);
+
+
+/* =========================
+   CLICK PROGRESS BAR
+========================= */
+
+progressContainer.addEventListener(
+    "click",
+    (event) => {
+
+        if (!audio.duration) {
+            return;
+        }
+
+        const width =
+            progressContainer.clientWidth;
+
+        const clickPosition =
+            event.offsetX;
+
+        audio.currentTime =
+            (clickPosition / width)
+            * audio.duration;
+
+    }
+);
+
+
+/* =========================
+   RESTART
+========================= */
+
+restartBtn.addEventListener(
+    "click",
+    () => {
+
+        audio.currentTime = 0;
+
+        playMusic();
+
+    }
+);
+
+
+/* =========================
+   MUTE
+========================= */
+
+muteBtn.addEventListener(
+    "click",
+    () => {
+
+        audio.muted =
+            !audio.muted;
+
+        muteBtn.innerHTML =
+            audio.muted ? "🔇" : "🔊";
+
+    }
+);
+
+
+/* =========================
+   WHEN SONG ENDS
+========================= */
+
+audio.addEventListener(
+    "ended",
+    () => {
+
+        /*
+           Single song hai,
+           isliye automatically
+           restart nahi kar rahe.
+        */
+
+        playBtn.innerHTML = "▶";
+
+        smallPlay.innerHTML = "▶";
+
+        vinyl.classList.add("paused");
+
+        progress.style.width = "100%";
+
+    }
+);
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            event.code === "Space"
+        ) {
+
+            event.preventDefault();
+
+            if (audio.paused) {
+
+                playMusic();
+
+            } else {
+
+                pauseMusic();
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
